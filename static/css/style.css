@@ -27,10 +27,23 @@ a:focus-visible{
     padding: .5rem 1rem;
     outline: none;
 }
+div a{
+    transition: .2s all ease;
+    height: 100%;
+    color: black;
+}
+a:hover {
+    background-color: black!important;
+    color: white;
+    transition: all .3s linear;
+}
 img{
     width: 45px;
     height: 45px;
     border-radius: 20%;
+}
+body{
+    margin: 0;
 }
 /*Header*/
 header{
@@ -43,6 +56,12 @@ header nav a{
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid var(--bg);
+    color: black;
+    padding: 1rem 0;
+}
+header,nav{
+    padding: 0;
+    margin: 0;
 }
 
 /*Main*/
