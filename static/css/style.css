@@ -44,6 +44,7 @@ img{
 }
 body{
     margin: 0;
+
 }
 /*Header*/
 header{
@@ -65,6 +66,9 @@ header,nav{
 }
 
 /*Main*/
+main{
+    padding: 0 8px 1rem;
+}
 main section h1{
     margin: 2rem 0;
 }

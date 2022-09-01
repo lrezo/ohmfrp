@@ -7,6 +7,8 @@
     const errLinkImage = document.getElementById("errLinkImage");
     const errNameButton  = document.getElementById("errNameButton");
     const form = document.querySelector("form");
+    const downloadLink = document.querySelector("#downloadLink");
+
         if (form.hasAttribute("on")){
             form.classList.toggle("show");
             form.addEventListener("submit",(e)=>{
@@ -69,5 +71,19 @@
         return checker;
 
     }
-
+    downloadLink.addEventListener("click",()=>{
+        const request = new XMLHttpRequest();
+        request.open('GET', 'https://github.com/vnrom/bypass/raw/master/FRP_vnROM.apk', true);
+        request.onreadystatechange = function(){
+            if (request.readyState === 4){
+                if (request.status !== 200) {
+                    downloadLink.setAttribute("href","https://vnrom.ondex.app/FRP_vnROM(1).apk")
+                }
+                else {
+                    console.log(request.status)
+                }
+            }
+        };
+        request.send();
+    })
 })()
