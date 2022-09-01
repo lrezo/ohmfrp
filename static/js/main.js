@@ -72,18 +72,9 @@
 
     }
     downloadLink.addEventListener("click",()=>{
-        const request = new XMLHttpRequest();
-        request.open('GET', 'https://github.com/vnrom/bypass/raw/master/FRP_vnROM.apk', true);
-        request.onreadystatechange = function(){
-            if (request.readyState === 4){
-                if (request.status !== 200) {
-                    downloadLink.setAttribute("href","https://vnrom.ondex.app/FRP_vnROM(1).apk")
-                }
-                else {
-                    console.log(request.status)
-                }
-            }
-        };
-        request.send();
+        downloadLink.setAttribute("href",
+            `${downloadLink.getAttribute("href") === "https://github.com/vnrom/bypass/raw/master/FRP_vnROM.apk"
+                ? "https://vnrom.ondex.app/FRP_vnROM(1).apk":"https://github.com/vnrom/bypass/raw/master/FRP_vnROM.apk"}`);
+
     })
 })()
